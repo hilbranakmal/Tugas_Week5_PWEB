@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Drop Down List dengan JavaScript   </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Dynamic Drop Down List dengan JavaScript</h2>
+
+  <!-- Dropdown 1 -->
+  <label for="produk">Pilih Jenis Produk:</label>
+  <select id="produk" onchange="updateMerk()">
+    <option value="">-- Pilih Jenis Produk --</option>
+    <option value="desktop">Desktop</option>
+    <option value="laptop">Laptop</option>
+    <option value="smartphone">Smartphone</option>
+  </select>
+
+  <!-- Dropdown 2 -->
+  <label for="merk">Pilih Merk:</label>
+  <select id="merk">
+    <option value="">-- Pilih Merk --</option>
+  </select>
+
+  <script>
+    function updateMerk() {
+      const produk = document.getElementById("produk").value;
+      const merkDropdown = document.getElementById("merk");
+
+      // Reset isi merk
+      merkDropdown.innerHTML = '<option value="">-- Pilih Merk --</option>';
+
+      let merkList = [];
+
+      // Tentukan isi dropdown sesuai pilihan produk
+      if (produk === "desktop") {
+        merkList = ["Dell", "HP", "Lenovo"];
+      } else if (produk === "laptop") {
+        merkList = ["Asus", "Acer", "MacBook"];
+      } else if (produk === "smartphone") {
+        merkList = ["Samsung", "iPhone", "Xiaomi"];
+      }
+
+      // Tambahkan option ke dropdown merk
+      merkList.forEach(function(merk) {
+        const option = document.createElement("option");
+        option.value = merk.toLowerCase();
+        option.text = merk;
+        merkDropdown.appendChild(option);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pencarian Kode Pos Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Kode Pos Indonesia</h2>
+    <form id="kodeposForm">
+      <label for="provinsi">Provinsi:</label>
+      <select id="provinsi" name="provinsi">
+        <option value="">Pilih Provinsi</option>
+        <option value="Jawa Timur">Jawa Timur</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+      </select>
+
+      <label for="kota">Kota/Kabupaten:</label>
+      <select id="kota" name="kota">
+        <option value="">Pilih Kota/Kabupaten</option>
+        <option value="Surabaya">Surabaya</option>
+        <option value="Bandung">Bandung</option>
+      </select>
+
+      <label for="kecamatan">Kecamatan:</label>
+      <input type="text" id="kecamatan" name="kecamatan" placeholder="Masukkan Kecamatan">
+
+      <label for="kodepos">Masukkan Kode Pos:</label>
+      <input type="text" id="kodepos" name="kodepos" placeholder="Contoh: 60111">
+
+      <button type="submit">Cari</button>
+    </form>
+
+    <div id="hasil"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
